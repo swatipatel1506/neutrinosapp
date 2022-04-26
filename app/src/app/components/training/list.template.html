@@ -1,0 +1,13 @@
+<div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" fxFlex.xs="100" fxFlex.gt-xs="50" *ngFor="let blog of page.blogs">
+    <mat-card (click)="navigateToDetailPage(blog)" style="margin:15px;">
+      <mat-card-header>
+        <mat-card-title>{{blog.title}}</mat-card-title>
+        <mat-card-subtitle>{{blog.description}}</mat-card-subtitle>
+        <img mat-card-avatar [src]="blog.image">
+      </mat-card-header>
+
+      <mat-card-content></mat-card-content>
+    </mat-card>
+  </div>
+</div>

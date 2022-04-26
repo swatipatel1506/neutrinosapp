@@ -1,0 +1,87 @@
+[
+    {
+        "id": "sd_vl2sO5YkG0hqnmZh",
+        "type": "tab",
+        "createdDate": "2022-04-25T11:12:36.206Z",
+        "label": "Detail",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "DetailComponent"
+    },
+    {
+        "id": "sd_Fr0OpQbVNY0OASDw",
+        "type": "OnInit",
+        "z": "sd_vl2sO5YkG0hqnmZh",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_Fr0OpQbVNY0OASDw",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_KXZgsfPNCxXI5unZ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "DetailComponent"
+    },
+    {
+        "id": "sd_KXZgsfPNCxXI5unZ",
+        "type": "PageVariables",
+        "z": "sd_vl2sO5YkG0hqnmZh",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_KXZgsfPNCxXI5unZ",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            [
+                "sd_hkHw9WPITgCtpHBu"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_hkHw9WPITgCtpHBu",
+        "type": "Storage",
+        "z": "sd_vl2sO5YkG0hqnmZh",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "sessionStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "selectedBlog"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "blog"
+        },
+        "functionName": "sd_hkHw9WPITgCtpHBu",
+        "category": "Storage",
+        "x": 340,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    }
+]

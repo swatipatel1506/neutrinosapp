@@ -1,0 +1,258 @@
+[
+    {
+        "id": "sd_TN05Go8DHboWgu1n",
+        "type": "tab",
+        "createdDate": "2022-04-25T09:47:58.620Z",
+        "label": "list",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "listComponent"
+    },
+    {
+        "id": "sd_SkeBYHjdvCr5rXwb",
+        "type": "OnInit",
+        "z": "sd_TN05Go8DHboWgu1n",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_SkeBYHjdvCr5rXwb",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_ujpzAm8KMsGol3L1"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "listComponent"
+    },
+    {
+        "id": "sd_ujpzAm8KMsGol3L1",
+        "type": "PageVariables",
+        "z": "sd_TN05Go8DHboWgu1n",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "Blogs",
+                "typedIpValue": {
+                    "type": "bh",
+                    "value": ""
+                }
+            }
+        ],
+        "functionName": "sd_ujpzAm8KMsGol3L1",
+        "category": "Function",
+        "x": 145,
+        "y": 40,
+        "wires": [
+            [
+                "sd_S4RwuOeRwvhFhUOF"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_g3VFueC0yHNpJx3p",
+        "type": "Log",
+        "z": "sd_TN05Go8DHboWgu1n",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 0,
+        "logObject": "this.page.blogs",
+        "functionName": "sd_g3VFueC0yHNpJx3p",
+        "category": "General",
+        "x": 520,
+        "y": 60,
+        "wires": [],
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "this.page",
+                "value": "blogs",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_ogcgx9T28KGaLxiI",
+        "type": "PageStart",
+        "z": "sd_TN05Go8DHboWgu1n",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "Navigate to detail page",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "event",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "navigateToDetailPage",
+        "category": "General",
+        "x": 80,
+        "y": 160,
+        "wires": [
+            [
+                "sd_A4FvB8gnmqmiVqFf"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "listComponent"
+    },
+    {
+        "id": "sd_HjCcVSdEZ29dl6rc",
+        "type": "Navigation",
+        "z": "sd_TN05Go8DHboWgu1n",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/home/detail/:id",
+        "pathMap": "",
+        "pathparams": [
+            {
+                "paramKey": "id",
+                "paramValue": {
+                    "type": "bh.input",
+                    "value": "event.id"
+                }
+            }
+        ],
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
+        "functionName": "sd_HjCcVSdEZ29dl6rc",
+        "category": "Navigation",
+        "x": 320,
+        "y": 160,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_A4FvB8gnmqmiVqFf",
+        "type": "Storage",
+        "z": "sd_TN05Go8DHboWgu1n",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "Test",
+        "operationType": "setItem",
+        "storageType": "sessionStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "selectedBlog"
+        },
+        "value": {
+            "type": "bh.input",
+            "value": "event"
+        },
+        "resultMapping": {},
+        "functionName": "test",
+        "category": "Storage",
+        "x": 200,
+        "y": 160,
+        "wires": [
+            [
+                "sd_HjCcVSdEZ29dl6rc"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_mvjMs88kIACFCBdi",
+        "type": "HttpRequest",
+        "z": "sd_TN05Go8DHboWgu1n",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "fetch blog data",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlMapping": "bh.local.listUrl",
+        "urlMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "listUrl"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBodyObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": ""
+        },
+        "resultMapping": "this.page.blogs",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "blogs"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "fetchBlogData",
+        "category": "HTTP",
+        "x": 325,
+        "y": 40,
+        "wires": [
+            [
+                "sd_g3VFueC0yHNpJx3p"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_S4RwuOeRwvhFhUOF",
+        "type": "Script",
+        "z": "sd_TN05Go8DHboWgu1n",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.listUrl = `${bh.system.environment.properties.ssdURL}list`;",
+        "functionName": "sd_S4RwuOeRwvhFhUOF",
+        "category": "Function",
+        "x": 240,
+        "y": 40,
+        "wires": [
+            [
+                "sd_mvjMs88kIACFCBdi"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    }
+]

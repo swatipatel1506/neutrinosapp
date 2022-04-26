@@ -1,0 +1,101 @@
+[
+    {
+        "id": "sd_nt86WyurqU6p5Zb7",
+        "type": "tab",
+        "createdDate": "2022-04-25T07:46:10.930Z",
+        "label": "home",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "homeComponent"
+    },
+    {
+        "id": "sd_vr3gCbkrJNC6cfFN",
+        "type": "OnInit",
+        "z": "sd_nt86WyurqU6p5Zb7",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "inputVariables": [],
+        "localVariables": [],
+        "outputVariables": [],
+        "functionName": "sd_vr3gCbkrJNC6cfFN",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_oOqP72oOygYUD3wi"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "homeComponent"
+    },
+    {
+        "id": "sd_oOqP72oOygYUD3wi",
+        "type": "PageVariables",
+        "z": "sd_nt86WyurqU6p5Zb7",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_oOqP72oOygYUD3wi",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_rCN1oM9zCs7lr3Ne",
+        "type": "PageStart",
+        "z": "sd_nt86WyurqU6p5Zb7",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "openAlert",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "openAlert",
+        "category": "General",
+        "x": 120,
+        "y": 140,
+        "wires": [
+            [
+                "sd_hJiifwbZcNV0JrCc"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "homeComponent"
+    },
+    {
+        "id": "sd_hJiifwbZcNV0JrCc",
+        "type": "Script",
+        "z": "sd_nt86WyurqU6p5Zb7",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "show the client box",
+        "script": "alert(\"Alert\");",
+        "functionName": "showTheClientBox",
+        "category": "Function",
+        "x": 360,
+        "y": 140,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    }
+]
